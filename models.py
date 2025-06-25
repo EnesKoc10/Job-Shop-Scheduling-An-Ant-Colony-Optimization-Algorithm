@@ -24,7 +24,7 @@ class Job:
         self.operations = []
         for proc_step, machine_options in enumerate(self.raw_operations):
             # Her işlem adımı için sadece bir makine seçilebilir
-            machine_id, proc_time = machine_options[0]  # Varsayılan olarak ilk makineyi seç
+            machine_id, proc_time = machine_options[0]
             self.operations.append(Operation(self.job_id, machine_id, proc_time, proc_step))
 
     def __len__(self):
@@ -40,7 +40,7 @@ class ProblemInstance:
 
     def __init__(self, data: List[List[List[Tuple[int, int]]]], alt_selection: Optional[List[int]] = None):
         if alt_selection is None:
-            alt_selection = [0] * len(data)  # Her iş için varsayılan olarak ilk alternatif
+            alt_selection = [0] * len(data)
 
         self.jobs: List[Job] = [
             Job(job_id, data[job_id])
@@ -58,7 +58,7 @@ class ProblemInstance:
             for proc_step in job.raw_operations:
                 for machine_id, _ in proc_step:
                     max_machine_id = max(max_machine_id, machine_id)
-        return max_machine_id + 1  # +1 because machine IDs are 0-based
+        return max_machine_id + 1
 
     def get_operations(self) -> List[Operation]:
         return [op for job in self.jobs for op in job.operations]
