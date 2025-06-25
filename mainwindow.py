@@ -54,26 +54,16 @@ class Ui_MainWindow(object):
         self._beta = QtWidgets.QDoubleSpinBox(self.gridLayoutWidget)
         self._beta.setObjectName("_beta")
         self.gridLayout.addWidget(self._beta, 1, 3, 1, 1)
-        # deben
         self.mainLayoutWidget = QtWidgets.QWidget(self.centralwidget)
         self.mainLayoutWidget.setGeometry(QtCore.QRect(20, 150, 1051, 261))
         self.mainLayout = QtWidgets.QVBoxLayout(self.mainLayoutWidget)
         self.mainLayout.setContentsMargins(0, 0, 0, 0)
         self.mainLayout.setObjectName("mainLayout")
-        #
         self._jobsTable = QtWidgets.QTableWidget(self.mainLayoutWidget)
         self._jobsTable.setObjectName("_jobsTable")
         self._jobsTable.setColumnCount(0)
         self._jobsTable.setRowCount(0)
         self.mainLayout.addWidget(self._jobsTable)
-        """self._jobsTable = QtWidgets.QTableWidget(self.centralwidget)
-        self._jobsTable.setGeometry(QtCore.QRect(20, 150, 1051, 261))
-        self._jobsTable.setObjectName("_jobsTable")
-        self._jobsTable.setColumnCount(0)
-        self._jobsTable.setRowCount(0)"""
-        """self._viewSchedule = QtWidgets.QTextEdit(self.centralwidget)
-        self._viewSchedule.setGeometry(QtCore.QRect(20, 420, 1051, 331))
-        self._viewSchedule.setObjectName("_viewSchedule")"""
         self._viewSchedule = QtWidgets.QWidget(self.centralwidget)
         self._viewSchedule.setGeometry(QtCore.QRect(20, 420, 1051, 331))
         self._viewSchedule.setObjectName("_viewSchedule")
@@ -127,7 +117,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_3.addWidget(self._randomFill, 0, QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignTop)
         self._createProblemBtn = QtWidgets.QPushButton(self.widget)
         self._createProblemBtn.setObjectName("_createProblemBtn")
-        self._createProblemBtn.setText("Create Problem")  # Opsiyonel
+        self._createProblemBtn.setText("Create Problem")
         self.verticalLayout_3.addWidget(self._createProblemBtn, 0,QtCore.Qt.AlignmentFlag.AlignLeft | QtCore.Qt.AlignmentFlag.AlignTop)
         self.horizontalLayout_2.addLayout(self.verticalLayout_3)
         MainWindow.setCentralWidget(self.centralwidget)
